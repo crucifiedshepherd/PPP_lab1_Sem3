@@ -8,8 +8,10 @@ CENTER = WINDOW_SIZE // 2
 MIN_RADIUS = 6
 MAX_RADIUS = 15
 DISTANCE_STEP = 3
-# ANGLE_STEP = math.radians(20)
 ANGLE_STEP = math.pi * (3 - math.sqrt(5))
+
+# эксперимент с иррациональным углом
+# ANGLE_STEP = math.pi * (3 - math.sqrt(5))
 
 CIRCLE_COUNT = 100
 STEM_COUNT = 7
@@ -32,7 +34,7 @@ canvas.pack()
 
 
 def get_circle_color(number):
-    """Определяет цвет точки в зависимости от этапа роста."""
+    """Определяет цвет точки в зависимости от этапа роста"""
     if number < STEM_COUNT:
         return "green"
 
@@ -46,13 +48,13 @@ def get_circle_color(number):
 
 
 def get_circle_radius(number):
-    """Определяет конечный размер точки."""
+    """Определяет радиус точки в зависимости от её роста"""
     radius = MIN_RADIUS + number * 0.1
     return min(radius, MAX_RADIUS)
 
 
 def grow_circle(number, step, item_id, target_radius):
-    """Постепенно увеличивает размер одной точки."""
+    """Постепенно увеличивает размер одной точки"""
     radius = target_radius * step / GROW_STEPS
 
     distance = number * DISTANCE_STEP
@@ -87,7 +89,7 @@ def grow_circle(number, step, item_id, target_radius):
 
 
 def draw_circle(number):
-    """Создаёт новую точку и запускает её рост."""
+    """Создаёт новую точку и запускает её рост"""
     distance = number * DISTANCE_STEP
     angle = number * ANGLE_STEP
 
