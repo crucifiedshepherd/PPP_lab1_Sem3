@@ -7,7 +7,7 @@ CENTER = WINDOW_SIZE // 2
 
 RADIUS = 15
 DISTANCE_STEP = 3
-ANGLE_STEP = math.radians(20)
+ANGLE_STEP = math.pi * (3 - math.sqrt(5))
 
 CIRCLE_COUNT = 100
 ANIMATION_DELAY = 30
